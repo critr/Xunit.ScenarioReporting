@@ -208,16 +208,18 @@
         }
 
         .menu-hashtag {
-            display: inline-block;
+            /*display: inline-block;*/
             width: 100%;
-            padding-bottom: 1em;
+            margin: 0.6em 1em;
+            display: block;
+            word-break:break-all;
         }
 
         .menu-hashtag > label {
             font-size: .9em;
             display: inline-block;
             text-align: center;
-            height: 2em;
+            min-height: 2em;
             padding: 0.36em 1em;
             margin: 0.32em 0.2em;
             color: #fff;
@@ -418,13 +420,13 @@
             overflow: hidden;
         }
 
-        .accordion input {
+        .accordion > .tab > input {
             position: absolute;
             opacity: 0;
             z-index: -1;
         }
 
-        .accordion label {
+        .accordion > .tab > label {
             position: relative;
             display: block;
             padding: 0 0 0 1em;
@@ -443,11 +445,11 @@
             transition: max-height .35s;
         }
         /* :checked */
-        .accordion input:checked ~ .tab-content {
+        .accordion > .tab > input:checked ~ .tab-content {
             max-height: 10em;
         }
         /* Icon */
-        .accordion label::after {
+        .accordion > .tab > label::after {
             position: absolute;
             right: 0;
             top: 0;
@@ -461,11 +463,11 @@
             transition: all .35s;
         }
 
-        .accordion input[type=checkbox] + label::after {
+        .accordion > .tab > input[type=checkbox] + label::after {
             content: "+";
         }
 
-        .accordion input[type=checkbox]:checked + label::after {
+        .accordion > .tab > input[type=checkbox]:checked + label::after {
             transform: rotate(315deg);
         }
 
@@ -478,31 +480,24 @@
             padding-left: 1em;
         }
 
-        .accordion input:checked ~ .tab-content {
+        .accordion > .tab > input:checked ~ .tab-content {
             max-height: initial;
         }
 
-        .accordion label::after {
+        .accordion > .tab > label::after {
             width: 1.5em;
             height: 1.5em;
             line-height: 1.5;
             font-size: 2em;
         }
 
-        .accordion label {
+        .accordion > .tab > label {
             /*line-height: 3; 4;*/
             padding: 1em 2em 1em 1em;
         }
 
-        .accordion.red label {
-            background-color: rgba(237, 20, 61, 0.58); /*crimson;*/
-        }
 
-        .accordion.red .tab-content {
-            background-color: rgba(237, 20, 61, 0.48); /*#EC2F55;*/
-        }
-
-        .accordion.tech label {
+        .accordion.tech > .tab > label {
             border-left: 1px solid gainsboro;
             border-top: 1px solid gainsboro;
             border-right: 1px solid gainsboro;
@@ -521,7 +516,7 @@
             color: inherit;
         }
 
-        .accordion.error label {
+        .accordion.error > .tab > label {
             border-left: 1px solid #c1ccb2;
             border-top: 1px solid #c1ccb2;
             border-right: 1px solid #c1ccb2;
@@ -544,6 +539,21 @@
             font-weight: normal;
         }
 
+        .accordion.nav-tool > .tab > label {
+            border-left: 1px solid #8f889f;
+            border-top: 1px solid #8f889f;
+            border-right: 1px solid #8f889f;
+            background-color: #9d95ae;
+            font-weight: normal;
+        }
+
+        .accordion.nav-tool .tab-content {
+            border-left: 1px solid #8f889f;
+            border-bottom: 1px solid #8f889f;
+            border-right: 1px solid #8f889f;
+            background-color: #8f889f;
+            /*background-color: inherit;*/
+        }
 
         /*#084978;*/
         .arrow {

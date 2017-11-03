@@ -343,22 +343,48 @@
         </xsl:if>
         <xsl:if test="$cntDefinition > 0">
 
-          <xsl:call-template name="data-driven-toc"></xsl:call-template>
-        
-          </xsl:if>
+          <div class="accordion nav-tool">
+            <div class="tab">
+              <input id="tab-table-of-contents" type="checkbox" name="tabs" />
+              <label for="tab-table-of-contents">Current content</label>
+              <div class="tab-content">
 
-        <div class="menu-hashtag">
-          <label for="filter-all">#all</label>
-          <label for="filter-success">#success</label>
-          <label for="filter-fail">#fail</label>
+                <xsl:call-template name="data-driven-toc"></xsl:call-template>
+
+              </div>
+              <!--tab-content-->
+            </div>
+            <!--tab-->
+          </div>
+          <!--accordion-->
+
+        </xsl:if>
+
+          <div class="accordion nav-tool">
+            <div class="tab">
+              <input id="tab-report-filtering" type="checkbox" name="tabs" />
+              <label for="tab-report-filtering">Filter the content</label>
+              <div class="tab-content">
+        
+        
+                <div class="menu-hashtag">
+                  <label for="filter-all">#all</label>
+                  <label for="filter-success">#success</label>
+                  <label for="filter-fail">#fail</label>
+                </div>
+                <div class="menu-hashtag data-driven">
+                  <xsl:call-template name="data-driven-filter-gui-label"></xsl:call-template>
+                </div>
+
+              </div>
+              <!--tab-content-->
+            </div>
+            <!--tab-->
+          </div>
+          <!--accordion-->
+
+
         </div>
-        <div class="menu-hashtag data-driven">
-          <xsl:call-template name="data-driven-filter-gui-label"></xsl:call-template>
-        </div>        
-        
-        
-        
-      </div>
       <!--report-header-->
 
       <div class="report-body">
@@ -428,7 +454,7 @@
                 </xsl:when>
                 <xsl:otherwise>
 
-                  <xsl:apply-templates select ="When"></xsl:apply-templates>
+                        <xsl:apply-templates select ="When"></xsl:apply-templates>
 
                 </xsl:otherwise>
               </xsl:choose>
