@@ -79,8 +79,8 @@
       </xsl:for-each>
       <xsl:text>
       {
-        background-color: #55da73;
-        box-shadow: inset 2px 2px 1px 0px #6b7b5f;
+        background-color: #6cd8d8;
+        box-shadow: inset 2px 2px 1px 0px #239898;
       }
       </xsl:text>
     </style>
