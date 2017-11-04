@@ -79,7 +79,7 @@
       </xsl:for-each>
       <xsl:text>
       {
-        background-color: #6cd8d8;
+        background-color: #67cccc;
         box-shadow: inset 2px 2px 1px 0px #239898;
       }
       </xsl:text>
