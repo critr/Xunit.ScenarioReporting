@@ -256,7 +256,7 @@
         #filter-all:not(:checked) ~ .wrapper .report-body > .section-scenario {
             width: 92vw;
             visibility: hidden;
-            position: absolute;
+            position: fixed; /* Take it out of flow and position relative to Viewport. Ensures it won't take up space when hidden, preventing a scrollable blank area at the end of the doc */
             opacity: 0;
         }
         /*Show*/
